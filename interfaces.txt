@@ -1,0 +1,14 @@
+auto lo
+iface lo inet loopback
+
+auto enp3s0
+iface enp3s0 inet manual
+
+auto vmbr0
+iface vmbr0 inet static
+    address 10.0.0.50/24
+    gateway 10.0.0.1
+    bridge-ports enp3s0
+    bridge-stp off
+    bridge-fd 0
+    # AVS-Internal Management Bridge
